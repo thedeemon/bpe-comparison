@@ -98,8 +98,8 @@ def mostFreqVal(h: mutable.Map[VPair, Int]): (VPair, Int, Int) = {
     if (n > maxN) {
       maxN = n
       minTop = k
-    } else if (n == maxN) {
-      if (k < minTop) minTop = k
+    } else if (n == maxN && k < minTop) {
+      minTop = k
     }
   }
   (minTop, maxN, total)
@@ -114,13 +114,11 @@ def replacePair(oldValuePair: VPair, newVal: Int, ph: mutable.Map[VPair, Int]): 
           data(i) = newVal
           data(j) = 0
           val (prevIdxOpt, nextIdxOpt) = pairs.afterReplace(i)
-
           prevIdxOpt.foreach { prevIdx =>
             val leftVal = data(prevIdx)
             ph(VPair(leftVal, vp.value1)) -= 1
             ph(VPair(leftVal, newVal)) += 1
           }
-
           nextIdxOpt.foreach { nextIdx =>
             val rightVal = data(nextIdx)
             ph(VPair(vp.value2, rightVal)) -= 1

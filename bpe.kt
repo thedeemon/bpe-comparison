@@ -106,7 +106,6 @@ fun mostFreqVal(h: MutableMap<VPair, Int>): Triple<VPair, Int, Int> {
             minTop = k
         } else if (n == maxN && k < minTop) {
             minTop = k
-            // minTop = minTop?.let { if (it < k) it else k } ?: k
         }
     }
     return Triple(minTop, maxN, total)

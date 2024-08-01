@@ -14,6 +14,7 @@ Compared on a 1000000 byte file (enw6):
 | Language      | Time, s    | Max Memory, MB |
 | ------------- | ---------- | -------------- | 
 | Swift         | 57         | 33             |
+| Rust          | 59         | 20             |
 | D             | 132        | 55             |
 | Kotlin        | 205        | 1070           |
 | C++           | 270        | 27             |
@@ -28,6 +29,9 @@ How the programs were built:
 // Swift version 5.10.1 (swift-5.10.1-RELEASE)
 // Target: x86_64-unknown-linux-gnu
 > swiftc -O bpe_st.swift -o bpe_st
+
+// rustc 1.79.0 (129f3b996 2024-06-10) (Arch Linux rust 1:1.79.0-3)
+> rustc -O -o bpers bpe.rs
 
 // LDC - the LLVM D compiler (1.39.0-sym1):
 //  based on DMD v2.109.0 and LLVM 18.1.6

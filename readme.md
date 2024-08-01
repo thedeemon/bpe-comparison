@@ -17,6 +17,7 @@ Compared on a 1000000 byte file (enw6):
 | D             | 132        | 55             |
 | Kotlin        | 205        | 1070           |
 | C++           | 270        | 27             |
+| OCaml         | 600        | 90             |
 | Scala         | 947        | 977            |
 
 (there's also a multithreaded version in Swift that ran in 30 s)
@@ -32,13 +33,13 @@ How the programs were built:
 //  based on DMD v2.109.0 and LLVM 18.1.6
 > ldc2 -O2 --release bpe.d -ofbped
 
-// kotlinc-jvm 2.0.0 (JRE 22.0.1+8)
-> kotlinc bpe.kt -include-runtime -d bpekt.jar
- 
 // g++ (GCC) 14.1.1 20240522
 // also tried clang, it's not faster
 > g++ -std=c++17 -O2 -o bpecpp bpe.cpp
 
+// kotlinc-jvm 2.0.0 (JRE 22.0.1+8)
+> kotlinc bpe.kt -include-runtime -d bpekt.jar
+ 
 // Scala 3.2.2, JVM
 > scala-cli package bpe.scala -o bpe-scala.jar
 
@@ -46,8 +47,15 @@ How the programs were built:
 // OpenJDK 64-Bit Server VM (build 22.0.1+8, mixed mode, sharing)
 > java -jar program.jar enw6
 
+// OCaml 5.2.0
+> ocamlopt -o bpeocaml -O2 bpe.ml
+
 // OS: Manjaro Linux x86_64
 // Kernel: 6.6.40-1-MANJARO
 // CPU: Intel i7-10710U (12) 
 ````
+
+I/O buffering and some unused computations are remnants of the original program that 
+was made to analyse a 100 MB file. Some translations skip the buffering, but at least keep
+computing the output histogram.
 

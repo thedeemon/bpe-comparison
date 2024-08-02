@@ -17,10 +17,11 @@ Compared on a 1000000 byte file (enw6):
 | Rust          |  59        |   20           |
 | C#            |  73        |   75           |
 | D             | 132        |   55           |
-| Kotlin        | 205        | 1070           |
+| Kotlin*       | 162        | 2057           | 
+| Kotlin        | 201        | 1070           |
 | C++           | 270        |   27           |
 | OCaml         | 600        |   90           |
-| Scala         | 947        |  977           |
+| Scala         | 941        |  977           |
 
 (there's also a multithreaded version in Swift that ran in 30 s)
 
@@ -54,6 +55,9 @@ How the programs were built:
 // Running Kotlin and Scala programs:
 // OpenJDK 64-Bit Server VM (build 22.0.1+8, mixed mode, sharing)
 > java -jar program.jar enw6
+
+// For Kotlin* :
+> java -server -XX:+UseShenandoahGC -Xms2G -Xmx2G -jar bpekt.jar enw6
 
 // OCaml 5.2.0
 > ocamlopt -o bpeocaml -O2 bpe.ml

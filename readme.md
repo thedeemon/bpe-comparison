@@ -13,13 +13,14 @@ Compared on a 1000000 byte file (enw6):
 
 | Language      | Time, s    | Max Memory, MB |
 | ------------- | ---------- | -------------- | 
-| Swift         | 57         | 33             |
-| Rust          | 59         | 20             |
-| D             | 132        | 55             |
+| Swift         |  57        |   33           |
+| Rust          |  59        |   20           |
+| C#            |  73        |   75           |
+| D             | 132        |   55           |
 | Kotlin        | 205        | 1070           |
-| C++           | 270        | 27             |
-| OCaml         | 600        | 90             |
-| Scala         | 947        | 977            |
+| C++           | 270        |   27           |
+| OCaml         | 600        |   90           |
+| Scala         | 947        |  977           |
 
 (there's also a multithreaded version in Swift that ran in 30 s)
 
@@ -32,6 +33,9 @@ How the programs were built:
 
 // rustc 1.79.0 (129f3b996 2024-06-10) (Arch Linux rust 1:1.79.0-3)
 > rustc -O -o bpers bpe.rs
+
+// dotnet 8.0.106
+> dotnet publish -c Release -r linux-x64 --self-contained
 
 // LDC - the LLVM D compiler (1.39.0-sym1):
 //  based on DMD v2.109.0 and LLVM 18.1.6

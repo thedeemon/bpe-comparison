@@ -18,6 +18,7 @@ Compared on a 1000000 byte file (enw6):
 | C#            |  73        |   75           |
 | D             | 132        |   55           |
 | Kotlin*       | 162        | 2057           | 
+| Go            | 178        |   35           |
 | Kotlin        | 201        | 1070           |
 | Java          | 262        |  725           |
 | C++           | 270        |   27           |
@@ -46,6 +47,9 @@ How the programs were built:
 // g++ (GCC) 14.1.1 20240522
 // also tried clang, it's not faster
 > g++ -std=c++17 -O2 -o bpecpp bpe.cpp
+
+// go version go1.22.5 linux/amd64
+> go build bpe.go
 
 // kotlinc-jvm 2.0.0 (JRE 22.0.1+8)
 > kotlinc bpe.kt -include-runtime -d bpekt.jar

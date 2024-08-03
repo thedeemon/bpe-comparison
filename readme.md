@@ -19,6 +19,7 @@ Compared on a 1000000 byte file (enw6):
 | D             | 132        |   55           |
 | Kotlin*       | 162        | 2057           | 
 | Kotlin        | 201        | 1070           |
+| Java          | 262        |  725           |
 | C++           | 270        |   27           |
 | OCaml         | 600        |   90           |
 | Scala         | 941        |  977           |

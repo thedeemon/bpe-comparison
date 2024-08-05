@@ -6,6 +6,7 @@ import (
     "fmt"
     "io"
     "os"
+    "time"
 )
 
 var data []uint16
@@ -255,8 +256,11 @@ func main() {
     for x := 0; x <= 255; x++ {
         thesaurus[uint16(x)] = []byte{byte(x)}
     }
-
+    fmt.Printf("loading\n")
+    start := time.Now()
     loadData(fname)
+    elapsed := time.Since(start)
+    fmt.Printf("loaded in %v\n", elapsed)
     fmt.Println(len(data))
     ph := calcPairHisto()
 

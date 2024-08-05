@@ -1,6 +1,9 @@
 import java.io.*;
 import java.util.*;
 
+// javac bpe.java
+// jar cvfm bpej.jar MANIFEST.MF bpe.class *.class
+
 public class bpe {
     private static char[] data;
 

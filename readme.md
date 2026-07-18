@@ -13,10 +13,10 @@ Compared on a 1000000 byte file (enw6):
 
 | Language      | Time, s    | Max Memory, MB |
 | ------------- | ---------- | -------------- | 
-| Swift         |  57        |   33           |
-| Rust          |  59        |   20           |
+| Swift         |  41        |   34           |
+| Rust          |  52        |   20           |
 | C#            |  62        |   86           |
-| D             | 132        |   55           |
+| D             | 106        |   37           |
 | Java fastutil | 153        |  236           |
 | Kotlin*       | 162        | 2057           | 
 | Go            | 178        |   35           |
@@ -31,18 +31,18 @@ Compared on a 1000000 byte file (enw6):
 How the programs were built:
 
 ````
-// Swift version 5.10.1 (swift-5.10.1-RELEASE)
+// Swift version 6.3 (swift-6.3-RELEASE)
 // Target: x86_64-unknown-linux-gnu
 > swiftc -O bpe_st.swift -o bpe_st
 
-// rustc 1.79.0 (129f3b996 2024-06-10) (Arch Linux rust 1:1.79.0-3)
+// rustc 1.96.1 (31fca3adb 2026-06-26) (Arch Linux rust 1:1.96.1-1)
 > rustc -O -o bpers bpe.rs
 
 // dotnet 10.0.109
 > dotnet publish -c Release -r linux-x64 --self-contained
 
-// LDC - the LLVM D compiler (1.39.0-sym1):
-//  based on DMD v2.109.0 and LLVM 18.1.6
+// LDC - the LLVM D compiler (1.42.0-symgc3):
+//  based on DMD v2.112.1 and LLVM 21.1.8
 > ldc2 -O2 --release bpe.d -ofbped
 
 // g++ (GCC) 14.1.1 20240522

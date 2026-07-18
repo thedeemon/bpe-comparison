@@ -17,6 +17,7 @@ Compared on a 1000000 byte file (enw6):
 | Rust          |  59        |   20           |
 | C#            |  73        |   75           |
 | D             | 132        |   55           |
+| Java fastutil | 153        |  236           |
 | Kotlin*       | 162        | 2057           | 
 | Go            | 178        |   35           |
 | Kotlin        | 201        | 1070           |

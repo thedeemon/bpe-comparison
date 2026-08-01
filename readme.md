@@ -25,6 +25,7 @@ Compared on a 1000000 byte file (enw6):
 | C++           | 270        |   27           |
 | OCaml         | 600        |   90           |
 | Scala         | 941        |  977           |
+| Python        |6243        |   81           |
 
 (there's also a multithreaded version in Swift that ran in 30 s)
 
@@ -57,6 +58,8 @@ How the programs were built:
  
 // Scala 3.2.2, JVM
 > scala-cli package bpe.scala -o bpe-scala.jar
+
+// Python 3.14.6
 
 // Running Kotlin and Scala programs:
 // OpenJDK 64-Bit Server VM (build 22.0.1+8, mixed mode, sharing)

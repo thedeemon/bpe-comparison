@@ -24,6 +24,7 @@ Compared on a 1000000 byte file (enw6):
 | Kotlin        | 201        | 1070           |
 | Java          | 262        |  725           |
 | C++           | 270        |   27           |
+| Python + PyPy | 363        |  178           |
 | OCaml         | 600        |   90           |
 | Scala         | 941        |  977           |
 | Python        |6243        |   81           |
@@ -61,6 +62,10 @@ How the programs were built:
 > scala-cli package bpe.scala -o bpe-scala.jar
 
 // Python 3.14.6
+
+// pypy:
+//Python 3.11.15 (194f9f44b505, May 27 2026, 10:45:44)
+// [PyPy 7.3.23 with GCC 16.1.1 20260430]
 
 // Running Kotlin and Scala programs:
 // OpenJDK 64-Bit Server VM (build 22.0.1+8, mixed mode, sharing)

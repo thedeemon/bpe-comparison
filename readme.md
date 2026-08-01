@@ -16,6 +16,7 @@ Compared on a 1000000 byte file (enw6):
 | Swift         |  41        |   34           |
 | Rust          |  52        |   20           |
 | C#            |  62        |   86           |
+| Python + Numba|  96        |  218           |
 | D             | 106        |   37           |
 | Java fastutil | 153        |  236           |
 | Kotlin*       | 162        | 2057           | 

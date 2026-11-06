@@ -17,6 +17,7 @@ Compared on a 1000000 byte file (enw6):
 | Rust          |  52        |   20           |
 | C#            |  62        |   86           |
 | Python + Numba|  96        |  218           |
+| Goose         | 101        |   17           |
 | D             | 106        |   37           |
 | Java fastutil | 153        |  236           |
 | Kotlin*       | 162        | 2057           | 
@@ -76,6 +77,9 @@ How the programs were built:
 
 // OCaml 5.2.0
 > ocamlopt -o bpeocaml -O2 bpe.ml
+
+// Goose v2026.3-linux-x64, compiles via GCC
+> ./goose build bpe.goose -O2
 
 // OS: Manjaro Linux x86_64
 // Kernel: 6.6.40-1-MANJARO
